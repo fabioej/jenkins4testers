@@ -5,9 +5,9 @@ pipeline {
         }
     }  
     stages {
-        stage("Build"){
+        stage("Build") {
             steps {
-                sh "chmod g+rx,o+rx build/alpine.sh"
+                sh "chmod 774 build/alpine.sh"
                 sh "./build/alpine.sh"
                 sh "bundle install"
             } 
